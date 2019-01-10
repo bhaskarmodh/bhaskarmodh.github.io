@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+<head>  
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+<title>Html5 media events</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head> 
+<body >
+    <div id="output"></div>
+    <video id="myVideo" width="320" height="176" controls autoplay>
+        <source src="http://www.w3schools.com/tags/mov_bbb.mp4" type="video/mp4">
+        <source src="http://www.w3schools.com/tags/mov_bbb.ogg" type="video/ogg">
+    </video>
+    <script>
+        var media = document.getElementById('myVideo');
+
+        // Playing event
+        media.addEventListener("playing", function() {
+            $("#output").html("Playing event triggered");
+        });
+   
+        // Pause event
+        media.addEventListener("pause", function() { 
+            $("#output").html("Pause event triggered"); 
+        });
+
+        // Seeking event
+        media.addEventListener("seeking", function() { 
+            $("#output").html("Seeking event triggered"); 
+        });
+
+        // Volume changed event
+        media.addEventListener("volumechange", function(e) { 
+            $("#output").html("Volumechange event triggered"); 
+        });
+
+    </script>   
+</body> 
+</html>
